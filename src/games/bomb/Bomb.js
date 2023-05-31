@@ -5,7 +5,7 @@ import { transaction } from 'mobx';
 import { Layout } from '../../pages';
 import { useEffect } from 'react';
 
-const MIN_SECOND = 1;
+const MIN_SECOND = 0;
 const MAX_SECOND = 600;
 
 function Bomb({ name, icon }) {
@@ -73,6 +73,7 @@ function Bomb({ name, icon }) {
   return (
     <Layout
       title={name}
+      icon={icon}
       direction="column"
       onSetting={handleSetting}
       onRestart={handleStart}

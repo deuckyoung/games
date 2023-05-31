@@ -13,6 +13,7 @@ function Layout({
   children,
   footer,
   title,
+  icon,
   direction = 'row',
   onRestart,
   onSetting,
@@ -20,19 +21,22 @@ function Layout({
   const navigate = useNavigate();
 
   return (
-    <Container maxWidth="md" fixed>
+    <Container maxWidth="md">
       {header ?? (
         <Header>
-          <strong>{title}</strong>
+          <TitleContainer>
+            <img src={icon} alt={title} />
+            <strong>{title}</strong>
+          </TitleContainer>
 
           <ButtonContainer>
             <IconButton onClick={() => navigate('/home')}>
               <HomeIcon />
             </IconButton>
-            <IconButton onClick={onSetting}>
+            <IconButton onClick={onSetting} TouchRippleProps={{ color: 'red' }}>
               <SettingsIcon />
             </IconButton>
-            <IconButton onClick={onRestart}>
+            <IconButton onClick={onRestart} disableFocusRipple>
               <ReplayIcon />
             </IconButton>
           </ButtonContainer>
@@ -58,24 +62,38 @@ const Header = styled('header')`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex: 0 0 100px;
-  font-size: 50px;
-  font-weight: bold;
-  margin-top: 20px;
+  height: 100px;
+`;
+
+const TitleContainer = styled('div')`
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  gap: 10px;
+
+  > img {
+    width: auto;
+    height: 25px;
+  }
+
+  > strong {
+    font-size: 25px;
+    transform: translateY(4px);
+  }
 `;
 
 const Main = styled('main')`
   display: flex;
   flex-direction: ${({ direction }) => direction};
   overflow: auto;
-  margin: 20px 0;
+  margin-bottom: 20px;
 `;
 
 const Footer = styled('footer')`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 100px;
+  height: 100px;
   border: 1px solid;
   margin-bottom: 10px;
   margin-top: auto;
@@ -87,11 +105,23 @@ const ButtonContainer = styled('div')`
 `;
 
 const IconButton = styled(MuiIconButton)`
+  width: 35px;
+  height: 35px;
   background: #083d77;
-  color: #f4d35e;
+  color: #ebebd3;
+  box-shadow: 0px 3px 0px 1px rgb(161 161 161);
 
-  &:hover {
+  :hover,
+  :active {
     background-color: #083d77;
-    opacity: 0.7;
+  }
+
+  :active {
+    transform: translateY(1px);
+    box-shadow: 0px 2px 0px 1px rgb(161 161 161);
+  }
+
+  > svg {
+    font-size: 25px;
   }
 `;

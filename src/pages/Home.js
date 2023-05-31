@@ -25,7 +25,7 @@ function Home() {
   };
 
   return (
-    <Layout header={<Header>내기 게임</Header>}>
+    <Layout header={<Header>미니 게임</Header>}>
       <GameButtonContainer>
         {games.map(info => (
           <GameButton {...info} key={info.path} onClick={handleRoute} />
@@ -41,15 +41,16 @@ const Header = styled('header')`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 100px;
-  font-size: 60px;
+  height: 100px;
+  font-size: 2.5rem;
   font-weight: bold;
+  margin-top: 10px;
 `;
 
 const GameButtonContainer = styled('div')`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 1rem;
   width: 100%;
 `;
 
@@ -65,15 +66,15 @@ const GameButtonWrapper = styled('div')`
   cursor: pointer;
   padding: 10px;
   background: #f4d35e;
-  gap: 4vw;
+  gap: 1.5rem;
 
   > img {
-    width: 13vw;
+    width: 50%;
     height: auto;
   }
 
   > strong {
-    font-size: 4vw;
+    font-size: 1em;
     font-weight: 600;
   }
 `;

@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'ONE-Mobile-POP';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff')
-    format('woff');
-  font-weight: normal;
+  font-family: 'TTTtangsbudaejjigaeB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2')
+    format('woff2');
+  font-weight: 700;
   font-style: normal;
 }
 
 * {
-  font-family: 'ONE-Mobile-POP';
+  font-family: 'TTTtangsbudaejjigaeB';
 }
 
 html,
@@ -21,4 +21,16 @@ body,
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+@media (min-width: 900px) {
+  html {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 899px) {
+  html {
+    font-size: 3vw;
+  }
 }
