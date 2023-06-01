@@ -12,7 +12,7 @@ const cars = [
   { id: 2, color: 'yellow', position: 0, distance: 0, isMovable: true },
 ];
 
-function Dalgona({ name, icon, mode }) {
+function Race({ name, icon, mode }) {
   const trackRef = useRef(null);
 
   const store = useLocalObservable(() => ({
@@ -94,8 +94,15 @@ function Dalgona({ name, icon, mode }) {
 
   useEffect(() => {
     if (trackRef?.current) {
-      console.log(trackRef.current.offsetWidth);
-      store.setTrackWidth(trackRef.current.clientWidth);
+      const observer = new ResizeObserver(entries => {
+        for (let entry of entries) {
+          const { width } = entry.contentRect;
+          store.setTrackWidth(width);
+        }
+      });
+      observer.observe(trackRef.current);
+
+      return () => observer.disconnect();
     }
   }, [trackRef]);
 
@@ -151,7 +158,7 @@ function Dalgona({ name, icon, mode }) {
   );
 }
 
-export default Dalgona;
+export default Race;
 
 const Track = styled('div')`
   display: flex;
