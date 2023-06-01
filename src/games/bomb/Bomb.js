@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Button, TextField, styled } from '@mui/material';
 import { Observer, useLocalObservable } from 'mobx-react';
 import { Duration } from 'luxon';
