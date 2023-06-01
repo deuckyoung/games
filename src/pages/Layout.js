@@ -62,11 +62,12 @@ const Header = styled('header')`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  flex: 0 0 100px;
 `;
 
 const TitleContainer = styled('div')`
   display: flex;
+
   align-items: center;
   border-radius: 20px;
   gap: 10px;
@@ -84,6 +85,7 @@ const TitleContainer = styled('div')`
 
 const Main = styled('main')`
   display: flex;
+  flex: 1;
   flex-direction: ${({ direction }) => direction};
   overflow: auto;
   margin-bottom: 20px;
@@ -93,7 +95,7 @@ const Footer = styled('footer')`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  flex: 0 0 60px;
   border: 1px solid;
   margin-bottom: 10px;
   margin-top: auto;

@@ -50,6 +50,7 @@ const Header = styled('header')`
 const GameButtonContainer = styled('div')`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: min-content;
   gap: 1rem;
   width: 100%;
 `;
