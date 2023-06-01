@@ -23,7 +23,7 @@ function Layout({
   const navigate = useNavigate();
 
   useEffect(() => {
-    window.ReactNativeWebView.postMessage(
+    window?.ReactNativeWebView?.postMessage(
       JSON.stringify({
         type: 'changeOrientation',
         mode,
