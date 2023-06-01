@@ -2,6 +2,7 @@ import { styled } from '@mui/material';
 import { games } from './../games';
 import Layout from './Layout';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function GameButton({ path, name, icon, onClick }) {
   const handleClick = () => {
@@ -18,6 +19,9 @@ function GameButton({ path, name, icon, onClick }) {
 
 function Home() {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.postMessage({ type: 'changeOrientation', value: 'portrait' });
+  }, []);
 
   const handleRoute = path => {
     console.log(path);
@@ -25,7 +29,7 @@ function Home() {
   };
 
   return (
-    <Layout header={<Header>미니 게임</Header>}>
+    <Layout header={<Header>미니 게임</Header>} mode={'portrait'}>
       <GameButtonContainer>
         {games.map(info => (
           <GameButton {...info} key={info.path} onClick={handleRoute} />

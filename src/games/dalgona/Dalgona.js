@@ -1,6 +1,6 @@
 import { Layout } from '../../pages';
 
-function Dalgona({ name, icon }) {
+function Dalgona({ name, icon, mode }) {
   const handleSetting = () => {};
 
   const handleStart = () => {};
@@ -9,6 +9,7 @@ function Dalgona({ name, icon }) {
     <Layout
       title={name}
       icon={icon}
+      mode={mode}
       direction="column"
       onSetting={handleSetting}
       onRestart={handleStart}

@@ -1,6 +1,6 @@
 import { Layout } from '../../pages';
 
-function Roulette({ name, icon }) {
+function Roulette({ name, icon, mode }) {
   const handleSetting = () => {};
 
   const handleStart = () => {};
@@ -9,6 +9,7 @@ function Roulette({ name, icon }) {
     <Layout
       title={name}
       icon={icon}
+      moded={mode}
       direction="column"
       onSetting={handleSetting}
       onRestart={handleStart}

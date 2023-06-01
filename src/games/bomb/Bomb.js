@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 const MIN_SECOND = 0;
 const MAX_SECOND = 600;
 
-function Bomb({ name, icon }) {
+function Bomb({ name, icon, mode }) {
   const store = useLocalObservable(() => ({
     timer: null,
     currentSeconds: MIN_SECOND,
@@ -75,6 +75,7 @@ function Bomb({ name, icon }) {
     <Layout
       title={name}
       icon={icon}
+      mode={mode}
       direction="column"
       onSetting={handleSetting}
       onRestart={handleStart}

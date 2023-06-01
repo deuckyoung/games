@@ -12,8 +12,9 @@ const cars = [
   { id: 2, color: 'yellow', position: 0, distance: 0, isMovable: true },
 ];
 
-function Dalgona({ name, icon }) {
+function Dalgona({ name, icon, mode }) {
   const trackRef = useRef(null);
+
   const store = useLocalObservable(() => ({
     carSize: 50,
     trackWidth: 0,
@@ -112,6 +113,7 @@ function Dalgona({ name, icon }) {
     <Layout
       title={name}
       icon={icon}
+      mode={mode}
       direction="column"
       onSetting={handleSetting}
       onRestart={handleStart}

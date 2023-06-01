@@ -7,6 +7,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ReplayIcon from '@mui/icons-material/Replay';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Layout({
   header,
@@ -14,11 +15,21 @@ function Layout({
   footer,
   title,
   icon,
+  mode,
   direction = 'row',
   onRestart,
   onSetting,
 }) {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.ReactNativeWebView.postMessage(
+      JSON.stringify({
+        type: 'changeOrientation',
+        mode,
+      }),
+    );
+  }, [mode]);
 
   return (
     <Container maxWidth="md">
