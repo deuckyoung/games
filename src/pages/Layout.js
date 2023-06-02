@@ -1,8 +1,4 @@
-import {
-  IconButton as MuiIconButton,
-  Container as MuiContainer,
-  styled,
-} from '@mui/material';
+import { IconButton, Container, styled } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ReplayIcon from '@mui/icons-material/Replay';
@@ -61,14 +57,6 @@ function Layout({
 
 export default Layout;
 
-const Container = styled(MuiContainer)`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  background: #ebebd3;
-  color: #083d77;
-`;
-
 const Header = styled('header')`
   display: flex;
   align-items: center;
@@ -78,7 +66,6 @@ const Header = styled('header')`
 
 const TitleContainer = styled('div')`
   display: flex;
-
   align-items: center;
   border-radius: 20px;
   gap: 10px;
@@ -89,8 +76,7 @@ const TitleContainer = styled('div')`
   }
 
   > strong {
-    font-size: 25px;
-    transform: translateY(4px);
+    font-size: 30px;
   }
 `;
 
@@ -115,26 +101,4 @@ const Footer = styled('footer')`
 const ButtonContainer = styled('div')`
   display: flex;
   gap: 15px;
-`;
-
-const IconButton = styled(MuiIconButton)`
-  width: 35px;
-  height: 35px;
-  background: #083d77;
-  color: #ebebd3;
-  box-shadow: 0px 3px 0px 1px rgb(161 161 161);
-
-  :hover,
-  :active {
-    background-color: #083d77;
-  }
-
-  :active {
-    transform: translateY(1px);
-    box-shadow: 0px 2px 0px 1px rgb(161 161 161);
-  }
-
-  > svg {
-    font-size: 25px;
-  }
 `;
